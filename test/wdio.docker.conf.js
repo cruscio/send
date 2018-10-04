@@ -1,3 +1,4 @@
+// eslint-disable-next-line node/no-extraneous-require
 const ip = require('ip');
 const common = require('./wdio.common.conf');
 
@@ -12,7 +13,7 @@ exports.config = Object.assign({}, common.config, {
   maxInstances: 1,
   services: ['docker', require('./testServer')],
   dockerOptions: {
-    image: 'selenium/standalone-firefox',
+    image: 'b4handjr/selenium-firefox',
     healthCheck: 'http://localhost:4444',
     options: {
       p: ['4444:4444'],
